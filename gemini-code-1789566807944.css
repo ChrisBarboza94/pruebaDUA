@@ -1,0 +1,137 @@
+/* Variables base y paleta de colores accesibles */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #2b2b2b;
+    --card-bg: #ffffff;
+    --primary-color: #0056b3;
+    --secondary-color: #e0e0e0;
+    --focus-outline: #ff9900;
+    --correct-color: #28a745;
+    --incorrect-color: #dc3545;
+}
+
+/* Variables para el modo de alto contraste (DUA) */
+[data-theme="alto-contraste"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --primary-color: #4da6ff;
+    --secondary-color: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1.125rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s;
+}
+
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-color); border-bottom: 2px solid var(--secondary-color); padding-bottom: 0.5rem;}
+
+.content-with-audio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lista-ejemplos {
+    padding-left: 1.5rem;
+}
+
+.lista-ejemplos li {
+    margin-bottom: 0.8rem;
+}
+
+/* Estilos de botones accesibles */
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:focus-visible {
+    outline: 4px solid var(--focus-outline);
+    outline-offset: 2px;
+}
+
+#btn-contraste, .btn-audio {
+    background-color: #333;
+    color: white;
+}
+
+[data-theme="alto-contraste"] #btn-contraste, 
+[data-theme="alto-contraste"] .btn-audio {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Interacción de Quiz */
+.opciones-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-quiz {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-align: left;
+    border: 2px solid transparent;
+}
+
+.btn-quiz:hover {
+    opacity: 0.9;
+    transform: translateX(5px);
+}
+
+.oculto {
+    display: none;
+}
+
+#feedback-quiz {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+}
